@@ -21,7 +21,7 @@ class StackSpider(Spider):
             item['url'] = question.xpath(
                 'a[@class="question-hyperlink"]/@href').extract()[0]
             yield item
-'''
+````
 
 We are iterating through the `questions` and assigning the `title` and `url` values from the scraped data. Be sure to test out the XPath selectors in the JavaScript Console within Chrome Developer Tools - e.g., `$x('//div[@class="summary"]/h3/a[@class="question-hyperlink"]/text()')` and `$x('//div[@class="summary"]/h3/a[@class="question-hyperlink"]/@href')`.
 
