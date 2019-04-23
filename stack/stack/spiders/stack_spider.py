@@ -1,4 +1,5 @@
 from scrapy import Spider
+from scrapy.selector import Selector
 
 
 class StackSpider(Spider):
@@ -7,3 +8,6 @@ class StackSpider(Spider):
     start_urls = [
         "http://stackoverflow.com/questions?pagesize=50&sort=newest",
     ]
+
+    def parse(self, response):
+        questions = Selector(response).xpath('//div[@class="summary"]/h3')
